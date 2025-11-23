@@ -1,0 +1,21 @@
+body {
+	font-family: "Bebas Neue", sans-serif;
+	color: black;
+	background-color: black;
+	font-size: 100%;
+	text-align: center;}
+
+.video-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0);
+  z-index: 999;
+pointer-events: none;
+}
+
+.video-modal-content {
+  position: absolute; /* required for click placement */
+  transform: translate(-50%, -50%); /* centers the top-left at the click point */
+	pointer-events: none;
+}
