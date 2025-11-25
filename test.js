@@ -87,9 +87,15 @@ function handleTap(event) {
 
     // --- Remove after its unique duration ---
     const duration = gifDurations[rawSrc] || 2000;
+   setTimeout(() => {
+    newGif.classList.add('fade-out');
+
     setTimeout(() => {
-    newGif.remove();
-    if (modal.querySelectorAll('img').length === 0) {
-        modal.style.display = 'none';
-    }
+        newGif.remove();
+
+        if (modal.querySelectorAll('img').length === 0) {
+            modal.style.display = 'none';
+        }
+    }, 600);
 }, duration);
+}
