@@ -19,13 +19,3 @@ pointer-events: none;
   transform: translate(-50%, -50%); /* centers the top-left at the click point */
 	pointer-events: none;
 }
-
-#videoModal img {
-    opacity: 1;        /* always start visible */
-    transition: opacity 0.6s ease-out;
-}
-
-.fade-out {
-    opacity: 0;
-    transition: opacity 0.6s ease-out;  /* adjust duration here */
-}
