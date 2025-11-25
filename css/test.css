@@ -32,7 +32,7 @@ pointer-events: none;
     transform: translateX(-50%);
     color: white;
     font-family: Arial, sans-serif;
-    font-size: 20px;           /* change size if needed */
+    font-size: 25px;           /* change size if needed */
     text-align: center;
     pointer-events: none;      /* taps go through the text */
     opacity: 0;
