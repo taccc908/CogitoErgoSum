@@ -88,14 +88,8 @@ function handleTap(event) {
     // --- Remove after its unique duration ---
     const duration = gifDurations[rawSrc] || 2000;
     setTimeout(() => {
-    newGif.classList.add('fade-out');
-
-    // Wait for fade-out to finish before removing
-    setTimeout(() => {
-        newGif.remove();
-
-        if (modal.querySelectorAll('img').length === 0) {
-            modal.style.display = 'none';
-        }
-    }, 600); // match this to your CSS transition time
+    newGif.remove();
+    if (modal.querySelectorAll('img').length === 0) {
+        modal.style.display = 'none';
+    }
 }, duration);
