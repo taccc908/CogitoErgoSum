@@ -20,6 +20,23 @@ const gifList = [
     "Video/Neuron14.gif"
 ];
 
+const textList = [
+    "What would my life look like if anyone could read my mind?",
+    "Would I still be free to think?",
+    "Free to feel",
+    "Free to imagine",
+    "Free to love",
+    "If someone could control my mind what would become of me, of my identity?",
+    "Who am I if not my thoughts?",
+    "I am what I feel",
+    "I am what I think",
+    "I am what I remember",
+    "I am BECAUSE I think",
+    "Please, let me think",
+    "Let me live",
+    "Just let me be"
+];
+
 // --- DURATIONS ---
 const gifDurations = {
     "Video/Neuron1.gif": 3400,
@@ -66,10 +83,23 @@ function handleTap(event) {
     const y = (event.clientY !== undefined) ? event.clientY :
         (event.touches && event.touches[0] && event.touches[0].clientY) || window.innerHeight / 2;
 
-    // --- Pick next GIF in sequence ---
-    const rawSrc = gifList[gifIndex];
-    gifIndex = (gifIndex + 1) % gifList.length;
+    // Pick next GIF in sequence
+const rawSrc = gifList[gifIndex];
 
+// Pick text that matches the GIF
+const caption = textList[gifIndex];
+
+// Advance index
+gifIndex = (gifIndex + 1) % gifList.length;
+
+// Update caption display
+const captionBox = document.getElementById('gifCaption');
+captionBox.style.opacity = 0;
+setTimeout(() => {
+    captionBox.textContent = caption;
+    captionBox.style.opacity = 1;
+}, 50);
+    
     // --- Create GIF element ---
     const newGif = document.createElement('img');
     newGif.src = freshGif(rawSrc);
